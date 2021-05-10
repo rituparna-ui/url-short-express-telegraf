@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 const app = express();
 const bot = new Telegraf(TOKEN);
 app.use(express.urlencoded({ extended: false }));
-const secert = '/' + TOKEN;
+const secret = '/' + TOKEN;
 app.use(bot.webhookCallback(`${secret}`));
 
 app.get('/', (req, res) => {
@@ -79,7 +79,7 @@ bot.command('short', async (ctx) => {
 bot.telegram.setWebhook('https://webhooktestte.herokuapp.com/');
 
 mongoose.connect(
-  'mongodb://localhost:27017/shortenit',
+  'mongodb+srv://notes:EQoLIjPsRn6nhuZF@cluster0ritu.adt1u.mongodb.net/shortenit?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     app.listen(PORT);
