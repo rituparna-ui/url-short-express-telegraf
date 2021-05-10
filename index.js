@@ -76,7 +76,7 @@ bot.command('short', async (ctx) => {
   }
 });
 
-bot.telegram.setWebhook('https://webhooktestte.herokuapp.com/');
+bot.telegram.setWebhook(`https://webhooktestte.herokuapp.com${secret}`);
 
 mongoose.connect(
   'mongodb+srv://notes:EQoLIjPsRn6nhuZF@cluster0ritu.adt1u.mongodb.net/shortenit?retryWrites=true&w=majority',
