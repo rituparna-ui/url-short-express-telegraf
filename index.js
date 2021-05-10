@@ -31,9 +31,7 @@ app.post('/shortenit', async (req, res) => {
     short: short,
   });
   const saved = await toSave.save();
-  res.json({
-    shorted: saved.short,
-  });
+  res.send(`<a href="https://webhooktestte.herokuapp.com${saved.short}"></a>`);
 });
 
 app.get('/:short', async (req, res) => {
