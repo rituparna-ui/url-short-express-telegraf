@@ -51,7 +51,7 @@ app.get('/:short', async (req, res) => {
       res.redirect(realUrl);
     }
   } catch (error) {
-    res.redirect('/error');
+    res.send('<h1>Error 404</h1>');
   }
 });
 
