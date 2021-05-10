@@ -31,7 +31,10 @@ app.post('/shortenit', async (req, res) => {
     short: short,
   });
   const saved = await toSave.save();
-  res.send(`<a href="https://webhooktestte.herokuapp.com${saved.short}"></a>`);
+  const url = `https://webhooktestte.herokuapp.com/${short}`;
+  res.json({
+    url: url,
+  });
 });
 
 app.get('/:short', async (req, res) => {
@@ -66,7 +69,7 @@ bot.command('short', async (ctx) => {
       short: short,
     });
     const saved = await toSave.save();
-    ctx.reply(saved.short);
+    ctx.reply('https://webhooktestte.herokuapp.com/' + saved.short);
   } else {
     ctx.reply(
       'Please use the command properly\nShorten URLs by sending\n/short <url>'
